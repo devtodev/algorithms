@@ -11,7 +11,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int main(){
+int Handshake(){
     int T;
     unsigned long rst[1000000];
     unsigned long i;

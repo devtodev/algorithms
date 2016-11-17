@@ -10,7 +10,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int main2() {
+int Array2DDS() {
     int i, j, p1, p2, p3, p4, p5, p6, p7, sum, max = -32768;
 
     int arr[6][6] = {{0, -4, -6, 0, -7, -6},
