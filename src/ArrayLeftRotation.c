@@ -16,21 +16,21 @@ struct tNode {
 };
 
 struct tNode first;
-struct tNode *cursor = &first;
+struct tNode *cursorALR = &first;
 
-void addNode(unsigned long value, int last)
+void addNodeALR(unsigned long value, int last)
 {
-	cursor->value = value;
+	cursorALR->value = value;
 	if (last == 1)
 	{
-		cursor->next = &first;
+		cursorALR->next = &first;
 	} else {
-		cursor->next = malloc(sizeof(struct tNode));
-		cursor = cursor->next;
+		cursorALR->next = malloc(sizeof(struct tNode));
+		cursorALR = cursorALR->next;
 	}
 }
 
-int main() {
+int array2DDS() {
     unsigned long n, l, j, value;
 
     scanf("%lu",&n);
@@ -38,17 +38,17 @@ int main() {
     for(j = 0; j < n; j++)
     {
     	scanf("%lu",&value);
-    	addNode(value, n-1 == j);
+    	addNodeALR(value, n-1 == j);
     }
-    cursor = &first;
+    cursorALR = &first;
 
     for (j = 0; j < l; j++)
-    	cursor = cursor->next;
+    	cursorALR = cursorALR->next;
 
     for (j = 0; j < n; j++)
 	{
-		printf("%lu ", cursor->value);
-		cursor = cursor->next;
+		printf("%lu ", cursorALR->value);
+		cursorALR = cursorALR->next;
 	}
     return 0;
 }
