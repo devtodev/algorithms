@@ -34,7 +34,7 @@ void addNode(unsigned long value, int last)
 	}
 }
 
-int main(){
+int CicularArrayRotation(){
     int n;
     int k;
     int q;
