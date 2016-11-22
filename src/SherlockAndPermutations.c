@@ -10,34 +10,35 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define MAXLENGTH 300
+#define MAXLENGTH 1010
 
-char *permutations[MAXLENGTH];
-unsigned int npermutations = 0;
+unsigned long permutations[MAXLENGTH][MAXLENGTH];
+unsigned long rtas[MAXLENGTH];
 
-void Permutaciones(char * cad, int l) {
-   char c;
-   int i, j;
-   int n = strlen(cad);
-   for(i = 0; i < n-l; i++) {
-      if(n-l > 2)
-    	  Permutaciones(cad, l+1);
-      else
-    	  printf(cad);
-      /* Intercambio de posiciones */
-      c = cad[l];
-      cad[l] = cad[l+i+1];
-      cad[l+i+1] = c;
-      printf("\n");
-      if(l+i == n-1) {
-         for(j = l; j < n; j++) cad[j] = cad[j+1];
-         cad[n] = 0;
-      }
-   }
-}
 
-int main() {
-    char txt[MAXLENGTH] = "12345\0";
-    Permutaciones(txt,0);
+int SherlockAndPermutation() {
+	unsigned long N = 0, zero, one, i;
+
+    for (i = 0; i < MAXLENGTH; i++)
+	{
+		permutations[i][1] = 1;
+		permutations[1][i] = i;
+	}
+
+	for (zero = 2; zero < MAXLENGTH; zero++)
+		for (one = 2; one < MAXLENGTH; one++)
+	{
+		permutations[zero][one] = (permutations[zero-1][one] + permutations[zero][one-1]) %(1000000000+7);
+	}
+    scanf("%lu",&N);
+	for(i = 0; i < N; i++){
+		scanf("%lu %lu", &zero, &one);
+		rtas[i] = permutations[zero][one];
+	}
+
+	for (i = 0; i < N; i++)
+	{
+		printf("%lu\n", rtas[i]);
+	}
     return 0;
 }
