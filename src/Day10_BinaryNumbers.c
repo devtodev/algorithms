@@ -11,7 +11,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int main(){
+int BinaryNumbers(){
     unsigned long num, max = 0, count = 0;
 
     scanf("%lu",&num);
