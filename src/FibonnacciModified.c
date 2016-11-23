@@ -3,7 +3,7 @@
 #include <math.h>
 
 
-int main() {
+int fiboModif() {
 	long double t = 0, t1 = 1, n = 10;
 	long double result = 0;
 
