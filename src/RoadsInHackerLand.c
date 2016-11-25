@@ -16,7 +16,7 @@ typedef struct sCity tCity;
 typedef struct sCalculated tCalculated;
 
 struct sCity{
-	unsigned long id;
+	long id;
 	int wasVisited;
 	tRoad *roads;
 	tCity *next;
@@ -46,7 +46,7 @@ tCity *getCity(unsigned long id)
 	return (temp != NULL)?temp:NULL;
 }
 
-void addCity(int id)
+void addCity(long id)
 {
 	tCity *temp = malloc(sizeof(struct sCity));
 	temp->id = id;
@@ -174,20 +174,36 @@ int needVisit(int x, int y)
 	return 1;
 }
 
-int main() {
-	int N = 5; // N cities  M roads
-	needCalculated = NULL;
-	long sum = 0;
 
-	for (int id = 1; id <= N; id++)
+void toBinary(long num)
+{
+   int aux;
+
+   if(num==0)
+	   return;
+
+   aux=num%2;
+   num=num/2;
+
+   toBinary(num);
+   printf("%d",aux);
+}
+
+int main() {
+	long N = 0, M = 0; // N cities  M roads
+	needCalculated = NULL;
+	long sum = 0, idCityFrom, idCityDestiny, length;
+
+	scanf("%ld %ld", &N, &M);
+
+	for (long id = 1; id <= N; id++)
 		addCity(id);
 
-	addRoad(getCity(1), getCity(3), 5);
-	addRoad(getCity(4), getCity(5), 0);
-	addRoad(getCity(2), getCity(1), 3);
-	addRoad(getCity(3), getCity(2), 1);
-	addRoad(getCity(4), getCity(3), 4);
-	addRoad(getCity(4), getCity(2), 2);
+	for (long id = 1; id <= M; id++)
+	{
+		scanf("%ld %ld %ld", &idCityFrom, &idCityDestiny, &length);
+		addRoad(getCity(idCityFrom), getCity(idCityDestiny), length);
+	}
 
 	for (int y = 1; y <= N; y++ )
 		for (int x = 1; x <= N; x++ )
@@ -199,7 +215,7 @@ int main() {
 				sum = sum + minPath;
 			}
 		}
-	printf("%ld ", sum);
-	/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+	toBinary(sum);
+
     return 0;
 }
