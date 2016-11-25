@@ -1,9 +1,9 @@
 /*
  * RoadsInHackerLand.c
  *
- *  Created on: 23 de nov. de 2016
+ *  Created on: 25 de nov. de 2016
  *      Author: karl
- */
+*/
 
 #include <stdio.h>
 #include <string.h>
@@ -121,7 +121,6 @@ long visitCity(tCity * cityFrom, tCity *cityDestiny, long pathsize)
 	{
 		if (road->destiny == cityDestiny)
 		{
-			// put in a list
 			pathsize = pathsize + road->length;
 			if (minPath > pathsize)
 				minPath = pathsize;
@@ -189,7 +188,7 @@ void toBinary(long num)
    printf("%d",aux);
 }
 
-int main() {
+int mainRoadsInHackerland() {
 	long N = 0, M = 0; // N cities  M roads
 	needCalculated = NULL;
 	long sum = 0, idCityFrom, idCityDestiny, length;
@@ -219,3 +218,4 @@ int main() {
 
     return 0;
 }
+
