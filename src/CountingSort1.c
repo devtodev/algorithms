@@ -21,7 +21,7 @@ long count(int arr[], int number, int N)
 	return sum;
 }
 
-int main() {
+int countingSort1Main() {
 	int N;
 	int arr[1000000];
 
