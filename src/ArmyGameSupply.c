@@ -14,7 +14,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int main(){
+int armyMain(){
     int n;
     int m;
     scanf("%d %d",&n,&m);
