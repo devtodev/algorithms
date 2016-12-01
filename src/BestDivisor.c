@@ -23,7 +23,7 @@ char* itoa(long val, int base){
 
 }
 
-int main() {
+int bestDivisor() {
      long n, rst = -1;
      long max=0;
      scanf("%ld", &n);
