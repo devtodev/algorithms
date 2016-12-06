@@ -51,11 +51,6 @@ void printGivenLevel(Node *root, int level)
 	}
 }
 
-void levelOrder(Node* root){
-	int h = height(root);
-	for (int i = 1; i <= h; i++)
-		printGivenLevel(root, i);
-}
 
 int height(Node* node)
 {
@@ -75,7 +70,13 @@ int height(Node* node)
 }
 
 
-int main(){
+void levelOrder(Node* root){
+	int h = height(root);
+	for (int i = 1; i <= h; i++)
+		printGivenLevel(root, i);
+}
+
+int main_BST(){
     Node* root=NULL;
     int T,data;
     scanf("%d",&T);
