@@ -79,7 +79,7 @@ void display(Node *head)
 	}
 }
 
-int main()
+int mainLinkedinList()
 {
 	int T,data;
     scanf("%d",&T);
