@@ -18,13 +18,13 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() {
+int mainMusicOnTheStreets() {
 	long long N, a0, aN, h1, h2, m, rst;
 	scanf("%lld", &N);
 	for (int i = 0; i < N; i++)
 	{
 		long temp = 0;
-		scanf("%lld", &temp);
+		scanf("%ld", &temp);
 		if (i == 0)
 			a0 = temp;
 		if (i == N-1)
