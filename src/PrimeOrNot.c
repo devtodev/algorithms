@@ -17,7 +17,7 @@ int primes1500000[] = {1000039, 1000213, 1000291, 1000429, 1000579, 1000621, 100
 #include <stdlib.h>
 #include <math.h>
 
-int main() {
+int mainPrimeOrNot() {
 	int n, j, sw;
 	int numbers[31];
 	scanf("%d", &n);
@@ -27,7 +27,7 @@ int main() {
 	}
 	for (int i = 0; i < n; i++)
 	{
-		int sq = sqrt(numbers[i]);
+		int sq = 2; //sqrt(numbers[i]);
 		sw = 0;
 		for(j = 2; j <= sq && sw == 0; j++) {
 		    if(numbers[i]%j == 0)

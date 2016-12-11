@@ -64,7 +64,7 @@ int motorDirection(int motornum, int cmd) {
 }
 
 
-int main()
+int mainBitManipulation()
 {
 	printf("%d\n", motorDirection(1, FORWARD));
 	printf("%d\n", motorDirection(1, BACKWARD));
