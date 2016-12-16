@@ -23,7 +23,7 @@ int getBitwiseAnd(int N, int K)
 	return max;
 }
 
-int main()
+int mainBitwiseAND()
 {
 	int S[10000];
 	int T, N, K, i;
