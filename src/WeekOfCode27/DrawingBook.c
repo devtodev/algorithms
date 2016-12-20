@@ -8,7 +8,7 @@
 
 #include "stdio.h"
 
-int main()
+int mainDrawingBook()
 {
 	int n, p, rst;
 	scanf("%d %d", &n, &p);
@@ -23,5 +23,6 @@ int main()
 			rst = ((n != p) && (n % 2 == 0))?1:0;
 	}
 	printf("%d", rst);
+	return 0;
 }
 
