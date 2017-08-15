@@ -8,7 +8,7 @@
 
 #include "stdio.h"
 
-int main() {
+int tailorMain() {
 	int N, P;
 	int rst[1000000] = {0};
 	int total = 0, minCostCluster, nButton;

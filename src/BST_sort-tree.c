@@ -8,13 +8,13 @@ typedef struct Node{
     struct Node* right;
     int data;
 }Node;
+
 Node* newNode(int data){
     Node* node=(Node*)malloc(sizeof(Node));
     node->left=node->right=NULL;
     node->data=data;
     return node;
 }
-
 
 Node* insert(Node* root,int data){
     if(root==NULL)
@@ -29,7 +29,6 @@ Node* insert(Node* root,int data){
             cur=insert(root->right,data);
             root->right=cur;
         }
-
     }
     return root;
 }
